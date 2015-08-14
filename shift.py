@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import tempfile
 import shutil
 import glob
 import os
@@ -8,7 +7,7 @@ import pyexiv2
 import datetime
 
 src_dir = sys.argv[1]
-seconds = float(sys.argv[2])
+seconds = int(sys.argv[2])
 
 print "Scanning directory %s..." % src_dir
 
@@ -16,7 +15,7 @@ shift = datetime.timedelta(0, seconds)
 
 print "Shifting %s ..." % shift
 
-for path in glob.iglob(os.path.join(src_dir, '*.jpg')):
+for path in glob.iglob(os.path.join(src_dir, '*.JPG')):
 	metadata = pyexiv2.ImageMetadata(path)
 	metadata.read()
 	
