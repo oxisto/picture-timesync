@@ -3,7 +3,6 @@ import tempfile
 import shutil
 import glob
 import os
-import exifread
 import sys
 import pyexiv2
 import datetime
