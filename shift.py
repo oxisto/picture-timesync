@@ -30,8 +30,12 @@ for path in glob.iglob(os.path.join(src_dir, '*.JPG')):
 	date += shift
 	metadata["Exif.Photo.DateTimeOriginal"].value = date
 	metadata["Exif.Photo.DateTimeDigitized"].value = date
-	metadata.write()		
+	
+	if 'Exif.Image.DateTime' in metadata:
+		metadata['Exif.Image.DateTime'].value = date
 		
+	metadata.write()		
+
 	should_be = "%s-%s" % (date.strftime("%d-%m-%Y-%H-%M-%S"), image_name)
 
 	try:
