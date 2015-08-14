@@ -8,7 +8,7 @@ import pyexiv2
 import datetime
 
 src_dir = sys.argv[1]
-minutes = float(sys.argv[2])
+seconds = float(sys.argv[2])
 
 print "Scanning directory %s..." % src_dir
 
