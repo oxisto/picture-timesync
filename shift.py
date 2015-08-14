@@ -14,7 +14,7 @@ print "Scanning directory %s..." % src_dir
 
 shift = datetime.timedelta(0, seconds)
 
-print "Shifting %s seconds..." % shift
+print "Shifting %s ..." % shift
 
 for path in glob.iglob(os.path.join(src_dir, '*.jpg')):
 	metadata = pyexiv2.ImageMetadata(path)
