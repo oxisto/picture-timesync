@@ -6,7 +6,7 @@ python:
 before_install:
   - sudo add-apt-repository ppa:pyexiv2-developers/ppa -y
   - sudo apt-get update -q
-  - sudo apt-get install pyexiv2
+  - sudo apt-get install python-pyexiv2
 install:
   - pip install pyexiv2 pyflakes
 script:
