@@ -1,4 +1,4 @@
-![[status](https://api.travis-ci.org/oxisto/picture-timesync.svg)](https://travis-ci.org/oxisto/picture-timesync)
+[![status](https://api.travis-ci.org/oxisto/picture-timesync.svg)](https://travis-ci.org/oxisto/picture-timesync)
 
 # Requirements
 
