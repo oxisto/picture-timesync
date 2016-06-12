@@ -8,6 +8,6 @@ before_install:
   - sudo apt-get update -q
   - sudo apt-get install python-pyexiv2
 install:
-  - pip install pyexiv2 pyflakes
+  - pip install pyflakes
 script:
   - pyflakes .

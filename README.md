@@ -2,6 +2,12 @@
 
 # Requirements
 
+## Linux
+
+* sudo add-apt-repository ppa:pyexiv2-developers/ppa
+* sudo apt-get update
+* sudo apt-get install python-pyexiv2
+
 ## OS X
 
 * brew install exiftool
