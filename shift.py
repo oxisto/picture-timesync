@@ -9,11 +9,11 @@ import datetime
 src_dir = sys.argv[1]
 seconds = int(sys.argv[2])
 
-print "Scanning directory %s..." % src_dir
+print("Scanning directory %s..." % src_dir)
 
 shift = datetime.timedelta(0, seconds)
 
-print "Shifting %s ..." % shift
+print("Shifting %s ..." % shift)
 
 for path in glob.iglob(os.path.join(src_dir, '*.JPG')):
   metadata = pyexiv2.ImageMetadata(path)
@@ -42,12 +42,12 @@ for path in glob.iglob(os.path.join(src_dir, '*.JPG')):
   try:
     parsed_date = datetime.datetime.strptime(basename[0:19], "%d-%m-%Y-%H-%M-%S")
   except ValueError:
-    print "Renaming..."
+    print("Renaming...")
     new_path = os.path.join(src_dir, should_be)
     shutil.move(path, new_path)
     continue
       
   if not parsed_date == date:
-    print "Mismatch in %s -> should be %s | %s" % (path, should_be, date - parsed_date)
+    print("Mismatch in %s -> should be %s | %s" % (path, should_be, date - parsed_date))
     new_path = os.path.join(src_dir, should_be)
     shutil.move(path, new_path)
