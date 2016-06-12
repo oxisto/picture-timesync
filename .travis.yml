@@ -3,6 +3,10 @@ python:
   - "2.6"
   - "2.7"
   - "pypy"
+before_install:
+  - sudo add-apt-repository ppa:pyexiv2-developers/ppa -y
+  - sudo apt-get update -q
+  - sudo apt-get install pyexiv2
 install:
   - pip install pyexiv2 pyflakes
 script:
