@@ -18,7 +18,11 @@ print("Shifting %s ..." % shift)
 for path in glob.iglob(os.path.join(src_dir, '*.JPG')):
   metadata = pyexiv2.ImageMetadata(path)
   metadata.read()
-  
+
+  if ("Exif.Photo.DateTimeOriginal" not in metadata) or ("Exif.Photo.DateTimeDigitized" not in metadata):
+    print "Skipping %s ..." % path
+    continue
+
   date = metadata["Exif.Photo.DateTimeOriginal"].value
   basename = os.path.basename(path)
   rr = basename.split("-")
